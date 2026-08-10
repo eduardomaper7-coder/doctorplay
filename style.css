@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,800&family=Inter:wght@400;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,800&family=Inter:wght@400;600;700;800&family=Space+Grotesk:wght@600;700&display=swap");
 
 :root{--blue:#0568ff;--blue2:#003cbd;--black:#05070a;--ink:#0a0d12;--paper:#f2f0eb;--white:#fff;--muted:#8f98a7;--line:rgba(255,255,255,.14)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--black);color:white;font-family:Inter,Arial,sans-serif;overflow-x:hidden}img{display:block;width:100%}a{color:inherit;text-decoration:none}button,select{font:inherit}.signal-bar{height:32px;background:var(--blue);display:flex;align-items:center;justify-content:center;gap:12px;font:800 9px Inter;letter-spacing:.2em}.signal-bar i{width:6px;height:6px;border-radius:50%;background:white;box-shadow:0 0 0 5px #ffffff24}.signal-bar span{opacity:.45}.nav{height:76px;display:flex;align-items:center;padding:0 clamp(22px,5.7vw,92px);gap:42px;position:sticky;top:0;background:#05070ae8;backdrop-filter:blur(18px);z-index:50;border-bottom:1px solid var(--line)}.logo{display:flex;align-items:center;gap:11px;margin-right:auto}.logo img{width:42px;height:42px;object-fit:cover;border-radius:50%;border:1px solid #ffffff30}.logo b{font:900 20px "Barlow Condensed";letter-spacing:-.02em}.logo b span{color:var(--blue)}.nav nav{display:flex;gap:34px}.nav nav a{font:700 10px Inter;color:#a9afba;text-transform:uppercase;letter-spacing:.06em}.nav nav a:hover{color:white}.nav-action,.btn{display:inline-flex;align-items:center;justify-content:center;gap:22px;min-height:48px;padding:0 22px;font:800 10px Inter;letter-spacing:.08em;transition:.22s}.nav-action{background:var(--blue)}.nav-action:hover,.btn:hover{transform:translateY(-3px)}.menu-toggle{display:none;background:none;border:0}.menu-toggle i{display:block;width:24px;height:2px;background:white;margin:5px}
@@ -137,4 +137,318 @@ footer{background:#05000e;border-color:#44195d}
   .contact-body{height:auto;grid-template-rows:390px auto}
   .contact-photo{height:390px}
   .diagnosis-card{height:auto;min-height:520px;padding:38px 24px}
+}
+
+
+/* Google review proof: visible in the home hero without blocking the repair image */
+.google-review-badge{position:absolute;z-index:8;left:-18px;top:8%;width:205px;padding:15px 17px;background:#0b0618e8;border:1px solid #ffffff26;border-left:3px solid #2bdfff;box-shadow:0 18px 45px #0009,0 0 28px #2bdfff20;backdrop-filter:blur(12px);transition:.22s}
+.google-review-badge:hover{transform:translateY(-4px);border-color:#2bdfff75;box-shadow:0 22px 55px #000b,0 0 34px #2bdfff35}
+.google-review-kicker{display:block;margin-bottom:7px;font:800 7px Inter;letter-spacing:.18em;color:#9ea8b8}
+.google-review-badge strong{display:flex;align-items:center;gap:9px;font:900 26px "Barlow Condensed",Arial,sans-serif;letter-spacing:-.02em}
+.google-review-badge strong i{font:normal 10px Inter;letter-spacing:1px;color:#ffd34d}
+.google-review-badge small{display:block;margin-top:4px;font:700 8px Inter;line-height:1.45;letter-spacing:.04em;color:#c5c9d2}
+@media(max-width:1050px){.google-review-badge{left:2%;top:5%}}
+@media(max-width:720px){.google-review-badge{left:10px;top:10px;width:190px;padding:13px 14px}.google-review-badge strong{font-size:24px}.google-review-badge small{font-size:7px}}
+
+/* Real Doctor Play media — supplied workshop photos and video */
+.real-case-hero .case-photo img{object-position:center 60%;filter:saturate(.92) contrast(1.08)}
+.real-work-intro{padding-top:95px}
+.real-case-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;align-items:stretch}
+.real-case{background:#110522;border:1px solid #34ddff17;border-radius:22px;overflow:hidden;box-shadow:0 18px 60px #0005;display:flex;flex-direction:column;min-width:0}
+.real-case-feature{grid-column:span 2;grid-row:span 2}
+.real-case-wide{grid-column:span 2}
+.real-media{height:290px;overflow:hidden;background:#05000e;position:relative}
+.real-case-feature .real-media{height:560px}
+.real-case-wide .real-media{height:360px}
+.real-media img,.real-media video{width:100%;height:100%;display:block;object-fit:cover}
+.real-video video{background:#05000e;object-position:center}
+.real-case-copy{padding:22px 22px 25px;display:flex;flex-direction:column;flex:1}
+.real-case-copy small{font:800 8px Inter;letter-spacing:.13em;color:#2de2ff}
+.real-case-copy h2{font:900 55px/.87 "Barlow Condensed";margin:15px 0}
+.real-case-copy h3{font-size:29px;line-height:1;margin:12px 0}
+.real-case-copy p{font-size:11px;line-height:1.65;color:#9a8fa8;margin:0}
+.real-case-copy>span{margin-top:auto;padding-top:18px;font:800 8px Inter;letter-spacing:.12em;color:#6e6380}
+@media(max-width:1050px){
+  .real-case-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .real-case-feature{grid-column:span 2;grid-row:auto}
+  .real-case-wide{grid-column:span 2}
+  .real-case-feature .real-media{height:520px}
+}
+@media(max-width:720px){
+  .real-work-intro{padding-top:70px}
+  .real-case-grid{grid-template-columns:1fr}
+  .real-case-feature,.real-case-wide{grid-column:auto}
+  .real-media,.real-case-wide .real-media{height:330px}
+  .real-case-feature .real-media{height:520px}
+  .real-case-copy h2{font-size:46px}
+  .real-case-copy h3{font-size:27px}
+}
+
+
+/* Customer review slider — real Google experiences supplied by the client */
+.reviews-home{position:relative;padding:90px clamp(22px,6.5vw,105px) 100px;background:linear-gradient(180deg,#080016 0%,#0c0219 58%,#090117 100%);overflow:hidden}
+.reviews-home:before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;right:-180px;top:-210px;background:radial-gradient(circle,#7d1cff35,transparent 66%);pointer-events:none}
+.reviews-home:after{content:"REVIEWS";position:absolute;right:-18px;bottom:-50px;font:900 180px/.8 "Barlow Condensed",Arial,sans-serif;letter-spacing:-.04em;color:#ffffff05;pointer-events:none}
+.reviews-shell{width:min(100%,1500px);margin:0 auto;position:relative;z-index:1}
+.reviews-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:50px;margin-bottom:40px}
+.reviews-heading h2{margin:16px 0 0;font:900 clamp(62px,7vw,108px)/.8 "Barlow Condensed",Arial,sans-serif;letter-spacing:-.045em}
+.reviews-heading h2 span{color:transparent;-webkit-text-stroke:1px #8fb6ff}
+.reviews-score{min-width:220px;border-left:1px solid #ffffff22;padding-left:26px;margin-bottom:5px}
+.reviews-score small{display:block;font:800 8px Inter;letter-spacing:.16em;color:#8f98a7}
+.reviews-score strong{display:inline-block;margin-top:7px;font:900 48px/.9 "Barlow Condensed",Arial,sans-serif}
+.reviews-score>span{display:inline-block;margin-left:10px;color:#ffd34d;font-size:13px;letter-spacing:2px;vertical-align:7px}
+.reviews-score p{margin:8px 0 0;color:#9ea6b4;font-size:10px}
+.review-slider{position:relative;border-top:1px solid #ffffff1c;border-bottom:1px solid #ffffff1c;background:#ffffff03}
+.review-viewport{position:relative;min-height:390px;overflow:hidden}
+.review-slide{position:absolute;inset:0;display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:70px;align-items:center;padding:48px 52px 45px;opacity:0;visibility:hidden;transform:translateX(42px);transition:opacity .45s ease,transform .45s ease,visibility .45s;pointer-events:none}
+.review-slide.is-active{position:relative;opacity:1;visibility:visible;transform:none;pointer-events:auto}
+.review-main{position:relative;padding-left:54px}
+.review-main:before{content:"“";position:absolute;left:0;top:-30px;font:900 95px "Barlow Condensed",Arial,sans-serif;color:#2bdfff;opacity:.9}
+.review-stars{margin-bottom:22px;color:#ffd34d;font-size:12px;letter-spacing:4px}
+.review-main blockquote{margin:0;max-width:950px;font:800 clamp(29px,3vw,48px)/1.05 "Barlow Condensed",Arial,sans-serif;letter-spacing:-.025em;color:#f6f7fb}
+.review-meta{align-self:stretch;border-left:1px solid #ffffff1d;padding-left:28px;display:flex;flex-direction:column;justify-content:center;min-width:0}
+.review-service{display:inline-flex;align-self:flex-start;padding:7px 9px;border:1px solid #2bdfff45;background:#2bdfff0d;color:#67e8ff;font:800 7px Inter;letter-spacing:.14em;margin-bottom:22px}
+.review-meta b{font:800 26px/1 "Barlow Condensed",Arial,sans-serif}
+.review-meta small{margin-top:8px;font:700 8px Inter;letter-spacing:.08em;color:#778191}
+.review-controls{min-height:76px;padding:15px 22px 15px 52px;display:flex;align-items:center;gap:24px;border-top:1px solid #ffffff12}
+.review-arrows{display:flex;gap:7px}
+.review-arrow{width:43px;height:43px;border:1px solid #ffffff24;background:transparent;color:#fff;cursor:pointer;transition:.2s}
+.review-arrow:hover{background:#0568ff;border-color:#0568ff;transform:translateY(-2px)}
+.review-dots{display:flex;align-items:center;gap:7px;flex:1}
+.review-dot{width:23px;height:3px;padding:0;border:0;background:#ffffff25;cursor:pointer;transition:.25s}
+.review-dot.is-active{width:42px;background:#2bdfff}
+.reviews-google-link{font:800 8px Inter;letter-spacing:.11em;color:#cbd3df;white-space:nowrap;transition:.2s}
+.reviews-google-link:hover{color:#2bdfff}
+@media(max-width:1050px){
+  .reviews-home{padding-top:78px;padding-bottom:86px}
+  .review-slide{grid-template-columns:minmax(0,1fr) 220px;gap:34px;padding:42px 36px}
+  .review-main{padding-left:42px}
+  .review-controls{padding-left:36px}
+}
+@media(max-width:720px){
+  .reviews-home{padding:66px 20px 72px}
+  .reviews-home:after{font-size:105px;bottom:-20px}
+  .reviews-heading{display:block;margin-bottom:26px}
+  .reviews-heading h2{font-size:62px}
+  .reviews-score{margin-top:28px;padding-left:18px;min-width:0}
+  .reviews-score strong{font-size:42px}
+  .review-viewport{min-height:465px}
+  .review-slide{grid-template-columns:1fr;gap:26px;align-content:center;padding:36px 22px 30px}
+  .review-main{padding-left:30px}
+  .review-main:before{font-size:70px;top:-20px}
+  .review-main blockquote{font-size:31px;line-height:1.06}
+  .review-meta{border-left:0;border-top:1px solid #ffffff18;padding:22px 0 0 30px}
+  .review-service{margin-bottom:14px}
+  .review-meta b{font-size:24px}
+  .review-controls{padding:14px 0;gap:12px;flex-wrap:wrap}
+  .review-arrows{order:1}
+  .review-dots{order:2;justify-content:flex-end;gap:5px}
+  .review-dot{width:12px}
+  .review-dot.is-active{width:26px}
+  .reviews-google-link{order:3;width:100%;padding-top:8px;text-align:right}
+}
+@media(prefers-reduced-motion:reduce){
+  .review-slide,.review-dot,.review-arrow{transition:none!important}
+}
+
+
+/* 2026 service architecture — expanded navigation and landing pages */
+.nav-service-group{position:relative;display:flex;align-items:center;height:76px}.nav-service-link{display:flex;align-items:center;gap:6px}.nav-caret{font-size:13px;transition:.2s}.nav-service-group:hover .nav-caret,.nav-service-group:focus-within .nav-caret{transform:rotate(180deg)}
+.mega-menu{position:absolute;top:calc(100% - 1px);right:-430px;width:min(1060px,88vw);padding:30px 34px 18px;background:#0d0618f5;border:1px solid #35e2ff31;border-top:2px solid #2de4ff;box-shadow:0 30px 80px #000d;backdrop-filter:blur(22px);display:grid;grid-template-columns:repeat(3,1fr);gap:32px;opacity:0;visibility:hidden;transform:translateY(10px);transition:.2s;pointer-events:none}.nav-service-group:hover .mega-menu,.nav-service-group:focus-within .mega-menu{opacity:1;visibility:visible;transform:none;pointer-events:auto}.mega-menu:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,#52119a16,transparent 40%,#1ddfff0d);pointer-events:none}.mega-menu-col{position:relative;z-index:1}.mega-menu-col>small{display:block;color:#8e839c;font:800 9px Inter;letter-spacing:.15em;margin:0 0 15px}.nav nav .mega-menu-col a{display:grid;gap:4px;padding:11px 0;border-bottom:1px solid #ffffff0d;text-transform:none;letter-spacing:0}.nav nav .mega-menu-col a b{font:800 18px "Barlow Condensed";color:#f8f4ff}.nav nav .mega-menu-col a span{font:500 10px Inter;line-height:1.45;color:#8e849c}.nav nav .mega-menu-col a:hover b{color:#2ce2ff}.mega-menu-foot{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #ffffff12;padding-top:18px;position:relative;z-index:1}.mega-menu-foot span{font:600 10px Inter;color:#8f849c}.nav nav .mega-menu-foot a{font:800 10px Inter;color:#2ce2ff;letter-spacing:.08em}
+.service-arrow{color:#2bdfff!important;font-size:22px!important;margin-right:10px;align-self:center}.service-stack article:hover .service-arrow{transform:translateX(4px)}
+.service-directory{padding:90px clamp(22px,6.5vw,105px) 110px;background:linear-gradient(180deg,#0a0217,#070015);position:relative}.service-directory-head{max-width:1500px;margin:0 auto 35px;display:flex;justify-content:space-between;align-items:end;gap:40px}.service-directory-head h2{font:900 clamp(52px,5.7vw,84px)/.84 "Barlow Condensed";letter-spacing:-.04em;margin:25px 0 0}.service-directory-head h2 span{color:#2ce2ff}.service-directory-head p{max-width:430px;color:#9286a0;font-size:12px;line-height:1.75}.service-directory-panel{max-width:1500px;margin:auto;background:#f8f8fb;color:#141826;border-radius:28px;padding:34px 38px 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:46px;box-shadow:0 25px 80px #0008}.directory-col small{display:block;color:#969dab;font:800 10px Inter;letter-spacing:.14em;margin-bottom:16px}.directory-col a{display:grid;gap:3px;padding:11px 0}.directory-col a b{font:800 22px "Barlow Condensed"}.directory-col a span{font-size:12px;color:#70788b}.directory-col a:hover b{color:#0568ff}.directory-foot{grid-column:1/-1;border-top:1px solid #e1e3e8;margin-top:8px;padding:18px 0 4px;display:flex;justify-content:space-between;gap:20px;color:#9aa1ae;font-size:11px}.directory-foot a{color:#1765ff;font-weight:800;letter-spacing:.04em}
+.expanded-products{grid-template-columns:repeat(3,1fr)}.expanded-products .product-card p{min-height:70px}.symptom-section{padding:100px clamp(22px,6.5vw,105px);background:#080016}.symptom-head{display:flex;justify-content:space-between;align-items:end;gap:35px;margin:25px 0 42px}.symptom-head h2{font:900 clamp(52px,6vw,86px)/.84 "Barlow Condensed";margin:0}.symptom-head h2 span{color:#2ce2ff}.symptom-head p{max-width:400px;color:#988ca6;font-size:12px;line-height:1.75}.symptom-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.symptom-grid>a{background:#110522;border:1px solid #36dfff1c;padding:26px;min-height:215px;display:flex;flex-direction:column;transition:.25s}.symptom-grid>a>b{font-size:24px;color:#2de2ff}.symptom-grid h3{font-size:30px;margin:28px 0 5px}.symptom-grid p{font-size:11px;color:#968aa4;line-height:1.65}.symptom-grid span{margin-top:auto;font:800 9px Inter;color:#2de2ff;letter-spacing:.08em}.symptom-grid>a:hover{background:#1b0732;transform:translateY(-4px);border-color:#2de2ff55}.service-confidence{padding:95px clamp(22px,6.5vw,105px);background:linear-gradient(120deg,#501092,#153578);display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:center}.service-confidence small{font:800 9px Inter;letter-spacing:.16em;color:#b8f6ff}.service-confidence h2{font:900 clamp(54px,6vw,86px)/.84 "Barlow Condensed";margin:20px 0}.service-confidence h2 span{color:#2ce2ff}.service-confidence>div>p{color:#c9bdd7;font-size:12px;line-height:1.75;max-width:450px}.confidence-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.confidence-grid article{background:#0a0418a3;border:1px solid #ffffff17;padding:24px;min-height:165px}.confidence-grid b{font:800 10px monospace;color:#2de2ff}.confidence-grid h3{font-size:25px;margin:25px 0 5px}.confidence-grid p{font-size:10px;color:#b7aac5;line-height:1.6}
+.service-detail-hero{min-height:650px;margin:18px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;background:radial-gradient(circle at 70% 40%,#8c21df38,transparent 32%),linear-gradient(135deg,#090016,#190630 56%,#071e45)}.service-detail-copy{padding:90px 4vw 90px 6vw;align-self:center}.service-detail-copy h1{font-size:clamp(62px,6.8vw,104px);margin:24px 0 28px;line-height:.82}.service-detail-copy>p{max-width:600px;color:#aaa0b8;line-height:1.7;font-size:14px}.service-badges{display:flex;gap:8px;flex-wrap:wrap;margin:25px 0}.service-badges span{border:1px solid #2de2ff30;background:#110524;padding:8px 11px;border-radius:99px;font:700 9px Inter;color:#bcb2c7}.service-detail-photo{position:relative;min-height:650px;overflow:hidden}.service-detail-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#10001e 0%,transparent 36%),linear-gradient(to top,#080014a6,transparent 40%)}.service-detail-photo img{height:100%;object-fit:cover;filter:saturate(.72) contrast(1.12)}.service-detail-photo>span{position:absolute;z-index:2;bottom:28px;right:28px;padding:10px 13px;background:#0a0218d6;border-left:2px solid #2de2ff;font:800 8px Inter;letter-spacing:.13em}.service-issues{padding:100px clamp(22px,6.5vw,105px);background:#090117}.service-issues-head{display:flex;justify-content:space-between;align-items:end;margin:28px 0 45px;gap:40px}.service-issues-head h2{font:900 clamp(54px,6vw,88px)/.84 "Barlow Condensed";margin:0}.service-issues-head h2 span{color:#2de2ff}.service-issues-head p{max-width:420px;color:#9a8ea7;font-size:12px;line-height:1.7}.issue-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.issue-grid article{min-height:220px;background:#110522;border:1px solid #32e2ff1b;padding:28px;position:relative}.issue-grid article>b{font:800 10px monospace;color:#2de2ff}.issue-grid h3{font-size:30px;margin:55px 0 8px}.issue-grid p{font-size:11px;color:#9c90aa;line-height:1.7}.detail-process{padding:100px clamp(22px,6.5vw,105px);background:linear-gradient(135deg,#4b0d85,#142c72)}.detail-process>h2{font:900 clamp(54px,6vw,88px)/.84 "Barlow Condensed";margin:25px 0 50px}.detail-process>h2 span{color:#2de2ff}.detail-steps{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid #ffffff2a}.detail-steps article{padding:25px 20px;min-height:230px;border-right:1px solid #ffffff20}.detail-steps article:first-child{border-left:1px solid #ffffff20}.detail-steps b{font:800 10px monospace;color:#8df3ff}.detail-steps h3{font-size:26px;margin:70px 0 8px}.detail-steps p{font-size:10px;color:#c9bdd7;line-height:1.6}.detail-cta{padding:80px clamp(22px,6.5vw,105px);background:#070015;display:flex;justify-content:space-between;align-items:center;gap:40px}.detail-cta small{font:800 9px Inter;letter-spacing:.16em;color:#2de2ff}.detail-cta h2{font:900 clamp(48px,5.4vw,78px)/.84 "Barlow Condensed";margin:18px 0}.detail-cta h2 span{color:#2de2ff}.detail-cta p{color:#95899f;font-size:12px}
+@media(max-width:1200px){.mega-menu{right:-250px}.expanded-products{grid-template-columns:repeat(2,1fr)}.detail-steps{grid-template-columns:repeat(3,1fr)}.detail-steps article{border:1px solid #ffffff20;margin:-1px 0 0 -1px}}
+@media(max-width:1050px){.mega-menu{display:none!important}.nav-service-group{height:auto}.service-directory-head,.symptom-head,.service-issues-head{align-items:flex-start;flex-direction:column}.service-directory-panel{grid-template-columns:1fr 1fr}.directory-foot{grid-column:1/-1}.service-confidence{grid-template-columns:1fr}.service-detail-hero{grid-template-columns:1fr}.service-detail-photo{min-height:440px}.issue-grid,.symptom-grid{grid-template-columns:1fr 1fr}.detail-cta{align-items:flex-start;flex-direction:column}}
+@media(max-width:720px){.service-directory{padding:70px 18px}.service-directory-panel{grid-template-columns:1fr;padding:24px 22px}.directory-foot{grid-column:auto;flex-direction:column}.expanded-products,.symptom-grid,.issue-grid{grid-template-columns:1fr}.service-confidence{padding:70px 18px}.confidence-grid{grid-template-columns:1fr}.service-detail-hero{margin:8px;min-height:0}.service-detail-copy{padding:65px 20px}.service-detail-copy h1{font-size:60px}.service-detail-photo{min-height:340px}.service-issues,.detail-process{padding:75px 18px}.detail-steps{grid-template-columns:1fr 1fr}.detail-steps article{min-height:190px}.detail-steps h3{margin-top:45px}.detail-cta{padding:70px 20px}.service-badges{display:grid;grid-template-columns:1fr}.symptom-section{padding:75px 18px}}
+
+
+/* 2026 navbar v2 — clearer hierarchy, better mega-menu and mobile navigation */
+.nav{
+  --nav-h:78px;
+  height:var(--nav-h);
+  padding:0 clamp(18px,4.4vw,72px);
+  gap:28px;
+  background:rgba(8,1,20,.88);
+  border-bottom:1px solid rgba(49,225,255,.14);
+  box-shadow:0 10px 40px rgba(0,0,0,.24);
+  backdrop-filter:blur(22px) saturate(1.2);
+  transition:height .25s ease,background .25s ease,box-shadow .25s ease;
+  isolation:isolate;
+}
+.nav.is-scrolled{--nav-h:68px;background:rgba(7,1,17,.96);box-shadow:0 14px 45px rgba(0,0,0,.48)}
+.nav .logo{gap:10px;min-width:max-content;margin-right:auto}
+.nav .logo img{width:43px;height:43px;border:1px solid rgba(75,230,255,.35);box-shadow:0 0 0 4px rgba(41,222,255,.05),0 0 24px rgba(48,220,255,.12);transition:.25s}
+.nav.is-scrolled .logo img{width:38px;height:38px}
+.logo-copy{display:grid;gap:1px;line-height:1}
+.logo-copy b{font:900 21px "Barlow Condensed";letter-spacing:-.02em}
+.logo-copy b span{color:#2ce2ff}
+.logo-copy small{font:700 7px Inter;letter-spacing:.16em;color:#787184}
+.nav nav{display:flex;align-items:stretch;align-self:stretch;gap:4px}
+.nav .nav-link,.nav-service-trigger{
+  position:relative;display:flex;align-items:center;justify-content:center;height:100%;padding:0 13px;border:0;background:transparent;
+  color:#a7a0b0;font:700 10px Inter;text-transform:uppercase;letter-spacing:.07em;cursor:pointer;white-space:nowrap;transition:.2s
+}
+.nav .nav-link:after,.nav-service-trigger:after{content:"";position:absolute;left:13px;right:13px;bottom:0;height:2px;background:#2ce2ff;transform:scaleX(0);transform-origin:center;transition:.2s;box-shadow:0 0 15px rgba(44,226,255,.7)}
+.nav .nav-link:hover,.nav .nav-link.current,.nav-service-trigger:hover,.nav-service-trigger.current,.nav-service-group.is-open .nav-service-trigger{color:#fff}
+.nav .nav-link:hover:after,.nav .nav-link.current:after,.nav-service-trigger:hover:after,.nav-service-trigger.current:after,.nav-service-group.is-open .nav-service-trigger:after{transform:scaleX(1)}
+.nav-caret{display:inline-grid;place-items:center;margin-left:5px;width:17px;height:17px;border:1px solid rgba(255,255,255,.13);border-radius:50%;font:500 14px/1 Inter;color:#68eaff;transition:.2s}
+.nav-service-group{position:static;height:auto;display:flex;align-items:stretch}
+.nav-service-group:hover .nav-caret,.nav-service-group:focus-within .nav-caret,.nav-service-group.is-open .nav-caret{transform:rotate(45deg);background:rgba(44,226,255,.1)}
+.nav-contact{display:flex;align-items:center;gap:15px;margin-left:4px;min-width:max-content}
+.nav-phone{display:grid;gap:2px;text-align:right;padding-right:15px;border-right:1px solid rgba(255,255,255,.11)}
+.nav-phone small{font:700 7px Inter;letter-spacing:.15em;color:#777080}.nav-phone strong{font:800 13px "Barlow Condensed";letter-spacing:.03em;color:#f4f2f7}
+.nav-phone:hover strong{color:#2ce2ff}
+.nav .nav-action{min-height:42px;height:42px;padding:0 16px;gap:8px;border-radius:8px;background:linear-gradient(110deg,#24dff4,#54f0ff);color:#06010d;box-shadow:0 0 28px rgba(43,226,255,.18);font-size:9px;letter-spacing:.06em;text-transform:uppercase}
+.nav .nav-action svg{width:16px;height:16px;fill:currentColor}.nav .nav-action:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(43,226,255,.28)}
+
+.nav .mega-menu{
+  position:absolute;top:100%;left:clamp(18px,4.4vw,72px);right:clamp(18px,4.4vw,72px);width:auto;
+  padding:22px;display:grid;grid-template-columns:1.05fr repeat(3,1fr) .92fr;gap:0;
+  background:rgba(12,5,25,.985);border:1px solid rgba(45,226,255,.22);border-top:2px solid #2ce2ff;border-radius:0 0 18px 18px;
+  box-shadow:0 35px 90px rgba(0,0,0,.7);backdrop-filter:blur(24px);opacity:0;visibility:hidden;transform:translateY(8px);pointer-events:none;transition:opacity .18s ease,transform .18s ease,visibility .18s;
+}
+.nav .mega-menu:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 4% 0%,rgba(118,23,187,.18),transparent 30%),radial-gradient(circle at 94% 10%,rgba(33,217,255,.12),transparent 26%);pointer-events:none;border-radius:inherit}
+.nav-service-group:hover .mega-menu,.nav-service-group:focus-within .mega-menu,.nav-service-group.is-open .mega-menu{opacity:1;visibility:visible;transform:none;pointer-events:auto}
+.mega-menu-intro,.mega-menu-col,.mega-menu-help{position:relative;z-index:1;padding:12px 22px;min-width:0}
+.mega-menu-intro{padding-left:10px;border-right:1px solid rgba(255,255,255,.08)}
+.mega-eyebrow,.mega-menu-help>span{display:block;color:#51eaff;font:800 8px Inter;letter-spacing:.16em;margin-bottom:13px}
+.mega-menu-intro strong{display:block;max-width:190px;font:900 31px/.9 "Barlow Condensed";letter-spacing:-.02em;color:#fff}
+.mega-menu-intro p,.mega-menu-help p{margin:12px 0 0;color:#847b90;font:500 10px/1.6 Inter}
+.nav .mega-menu-col>small{display:block;color:#7e758a;font:800 8px Inter;letter-spacing:.15em;margin:1px 0 10px}
+.nav nav .mega-menu-col a{display:grid;gap:2px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.055);text-transform:none;letter-spacing:0}
+.nav nav .mega-menu-col a:last-child{border-bottom:0}
+.nav nav .mega-menu-col a b{font:800 17px "Barlow Condensed";color:#f6f2fa;transition:.18s}
+.nav nav .mega-menu-col a span{font:500 9px/1.45 Inter;color:#756e80}
+.nav nav .mega-menu-col a:hover b{color:#3ce6ff;transform:translateX(3px)}
+.mega-menu-help{margin:0 0 0 8px;border:1px solid rgba(52,226,255,.15);background:linear-gradient(145deg,rgba(40,12,70,.76),rgba(5,29,48,.6));border-radius:12px;align-self:stretch;display:flex;flex-direction:column;justify-content:center}
+.mega-menu-help b{font:900 24px/.95 "Barlow Condensed"}.mega-menu-help p{margin:8px 0 16px}
+.nav nav .mega-menu-help a{display:flex;align-items:center;justify-content:space-between;padding:11px 12px;background:#2ce2ff;color:#07010d;border-radius:7px;font:800 8px Inter;letter-spacing:.05em;text-transform:uppercase}
+.nav nav .mega-menu-help a:hover{background:white}
+.nav .mega-menu-foot{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:18px;margin-top:15px;padding:14px 10px 0;border-top:1px solid rgba(255,255,255,.09);position:relative;z-index:1}
+.nav .mega-menu-foot>span{font:600 8px Inter;color:#756d80;letter-spacing:.02em}.nav nav .mega-menu-foot a{display:flex;align-items:center;gap:10px;font:800 8px Inter;color:#48e7ff;letter-spacing:.1em;text-transform:uppercase}
+.nav nav .mega-menu-foot a:hover{color:white}
+
+.nav .menu-toggle{display:none;width:42px;height:42px;padding:0;border:1px solid rgba(255,255,255,.12);border-radius:8px;background:rgba(255,255,255,.04);cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:5px}
+.nav .menu-toggle span{display:block;width:18px;height:1.5px;background:#fff;margin:0;transition:.22s;transform-origin:center}
+.nav .menu-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.nav .menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}.nav .menu-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+
+@media(max-width:1280px){
+  .nav{gap:18px;padding-left:28px;padding-right:28px}.nav .mega-menu{left:28px;right:28px}.nav .nav-link,.nav-service-trigger{padding-left:9px;padding-right:9px}.nav-phone{display:none}.mega-menu-intro{display:none}.nav .mega-menu{grid-template-columns:repeat(3,1fr) .9fr}
+}
+@media(max-width:1050px){
+  .nav{--nav-h:70px;padding:0 18px;gap:12px}.nav.is-scrolled{--nav-h:64px}.nav .logo{margin-right:auto}.logo-copy small{display:none}
+  .nav .menu-toggle{display:flex;order:4}.nav-contact{order:3;margin:0}.nav .nav-action{height:40px;min-height:40px}
+  .nav nav{display:none;position:absolute;top:100%;left:0;right:0;max-height:calc(100vh - var(--nav-h));overflow:auto;background:rgba(9,2,22,.985);border-bottom:1px solid rgba(48,226,255,.2);box-shadow:0 30px 60px rgba(0,0,0,.6);padding:12px 18px 22px;flex-direction:column;align-items:stretch;gap:0}
+  .nav nav.open{display:flex}.nav .nav-link,.nav-service-trigger{height:52px;min-height:52px;justify-content:space-between;padding:0 5px;border-bottom:1px solid rgba(255,255,255,.07);font-size:10px}
+  .nav .nav-link:after,.nav-service-trigger:after{display:none}.nav-service-group{display:block;width:100%}
+  .nav .mega-menu{position:static;inset:auto;width:100%;padding:8px 0 14px;margin:0;background:transparent;border:0;border-radius:0;box-shadow:none;backdrop-filter:none;opacity:1;visibility:visible;transform:none;pointer-events:auto;grid-template-columns:1fr 1fr;gap:8px;display:none!important}
+  .nav-service-group:hover .mega-menu,.nav-service-group:focus-within .mega-menu{display:none!important}.nav-service-group.is-open .mega-menu{display:grid!important}
+  .nav .mega-menu:before,.mega-menu-intro{display:none}.mega-menu-col,.mega-menu-help{padding:14px;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.025);border-radius:10px}
+  .nav nav .mega-menu-col a{padding:8px 0}.nav nav .mega-menu-col a b{font-size:16px}.nav nav .mega-menu-col a span{font-size:8px}.mega-menu-help{margin:0;justify-content:flex-start}.mega-menu-help b{font-size:22px}.nav .mega-menu-foot{grid-column:1/-1;margin-top:2px;padding:12px 4px 0}.nav .mega-menu-foot>span{display:none}
+  body.nav-open{overflow:hidden}
+}
+@media(max-width:620px){
+  .nav{padding:0 12px}.nav .logo img{width:39px;height:39px}.nav.is-scrolled .logo img{width:36px;height:36px}.logo-copy b{font-size:18px}.nav .nav-action{padding:0 11px;border-radius:7px}.nav .nav-action span{font-size:8px}
+  .nav .mega-menu{grid-template-columns:1fr}.nav .mega-menu-foot{grid-column:auto}.mega-menu-help{order:4}.nav nav .mega-menu-foot a{width:100%;justify-content:space-between;padding:8px 0}
+}
+@media(max-width:390px){
+  .logo-copy b{font-size:17px}.nav .nav-action span{display:none}.nav .nav-action{width:40px;padding:0}.nav .nav-action svg{width:18px;height:18px}.nav{gap:8px}
+}
+@media(prefers-reduced-motion:reduce){.nav,.nav *, .nav *:before,.nav *:after{transition:none!important}}
+/* Small-screen compatibility overrides for legacy navbar rules */
+@media(max-width:1050px){
+  .nav .nav-action{display:inline-flex}
+  .nav nav.open{top:100%}
+}
+
+
+/* 2026 typography refinement — cleaner, more premium display titles */
+:root{--display-font:"Space Grotesk",Inter,Arial,sans-serif}
+
+/* Main page titles: less condensed, more breathing room and better line breaks */
+h1,
+.page-hero h1,
+.case-hero h1,
+.about-hero h1,
+.contact-hero h1,
+.service-detail-copy h1{
+  font-family:var(--display-font);
+  font-weight:700;
+  font-style:normal;
+  letter-spacing:-.058em;
+  line-height:.94;
+  text-wrap:balance;
+  font-kerning:normal;
+  font-synthesis:none;
+}
+.hero h1{
+  font-family:var(--display-font);
+  font-weight:700;
+  font-size:clamp(62px,6.3vw,104px);
+  line-height:.91;
+  letter-spacing:-.062em;
+  max-width:760px;
+  margin-top:28px;
+  margin-bottom:32px;
+}
+.hero h1 span,
+.page-hero h1 span,
+.case-hero h1 span,
+.about-hero h1 span,
+.contact-hero h1 span{
+  font-family:inherit;
+  letter-spacing:inherit;
+}
+.service-detail-copy h1{
+  font-size:clamp(54px,5.3vw,86px);
+  line-height:.96;
+  letter-spacing:-.055em;
+  max-width:680px;
+  margin:22px 0 26px;
+}
+.page-hero h1,.case-hero h1,.about-hero h1,.contact-hero h1{
+  line-height:.93;
+  letter-spacing:-.06em;
+}
+
+/* Section headings: strong, editorial and readable without poster-like compression */
+.section-title h2,.process-head h2,.faq h2,
+.diag-copy h2,.work-copy h2,.final-cta h2,
+.mega-title h2,.manifesto h2,.diagnosis-card h2,
+.reviews-heading h2,.service-directory-head h2,.symptom-head h2,
+.service-confidence h2,.service-issues-head h2,.detail-process>h2,.detail-cta h2{
+  font-family:var(--display-font)!important;
+  font-weight:700!important;
+  line-height:.96!important;
+  letter-spacing:-.05em!important;
+  text-wrap:balance;
+}
+.reviews-heading h2{font-size:clamp(52px,6vw,92px)!important}
+.service-directory-head h2,.symptom-head h2,.service-confidence h2,.service-issues-head h2,.detail-process>h2{font-size:clamp(48px,5.2vw,78px)!important}
+.detail-cta h2{font-size:clamp(44px,4.8vw,70px)!important}
+
+/* Supporting card titles keep a little gaming character but gain consistency */
+.service-feature h3,.service-stack h3,.product-card h3,.case h3,.issue-grid h3,
+.symptom-grid h3,.confidence-grid h3,.detail-steps h3,.steps h3{
+  font-family:var(--display-font);
+  font-weight:700;
+  letter-spacing:-.035em;
+  line-height:1.02;
+}
+
+@media(max-width:720px){
+  .hero h1{font-size:clamp(52px,15vw,72px);line-height:.94;letter-spacing:-.058em}
+  .service-detail-copy h1{font-size:clamp(46px,13vw,62px);line-height:.98;letter-spacing:-.052em}
+  .page-hero h1,.case-hero h1,.about-hero h1,.contact-hero h1{line-height:.96;letter-spacing:-.055em}
+  .section-title h2,.process-head h2,.faq h2,
+  .diag-copy h2,.work-copy h2,.final-cta h2,
+  .mega-title h2,.manifesto h2,.diagnosis-card h2,
+  .reviews-heading h2,.service-directory-head h2,.symptom-head h2,
+  .service-confidence h2,.service-issues-head h2,.detail-process>h2,.detail-cta h2{
+    line-height:.99!important;
+    letter-spacing:-.045em!important;
+  }
 }
