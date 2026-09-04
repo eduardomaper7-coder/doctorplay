@@ -1,5 +1,50 @@
-const menuButton = document.querySelector(".menu-toggle");
-const nav = document.querySelector(".nav nav");
+// Site navigation: sticky state, desktop mega-menu and mobile accordion.
+const siteHeader = document.querySelector("[data-site-header]");
+const menuButton = siteHeader?.querySelector(".menu-toggle");
+const nav = siteHeader?.querySelector("#site-navigation");
+const serviceGroup = siteHeader?.querySelector(".nav-service-group");
+const serviceTrigger = siteHeader?.querySelector(".nav-service-trigger");
+
+const setServiceOpen = (open) => {
+  serviceGroup?.classList.toggle("is-open", open);
+  serviceTrigger?.setAttribute("aria-expanded", String(open));
+};
+
+const setMenuOpen = (open) => {
+  nav?.classList.toggle("open", open);
+  menuButton?.setAttribute("aria-expanded", String(open));
+  document.body.classList.toggle("nav-open", open && window.innerWidth <= 1050);
+  if (!open) setServiceOpen(false);
+};
+
+menuButton?.addEventListener("click", () => setMenuOpen(!nav?.classList.contains("open")));
+serviceTrigger?.addEventListener("click", (event) => {
+  event.stopPropagation();
+  setServiceOpen(!serviceGroup?.classList.contains("is-open"));
+});
+
+nav?.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => setMenuOpen(false)));
+
+document.addEventListener("click", (event) => {
+  if (!siteHeader?.contains(event.target)) {
+    setServiceOpen(false);
+    if (window.innerWidth <= 1050) setMenuOpen(false);
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key !== "Escape") return;
+  setServiceOpen(false);
+  setMenuOpen(false);
+  menuButton?.focus();
+});
+
+const updateHeader = () => siteHeader?.classList.toggle("is-scrolled", window.scrollY > 28);
+updateHeader();
+window.addEventListener("scroll", updateHeader, { passive: true });
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 1050) setMenuOpen(false);
+});
 
 const glow = document.createElement("div");
 glow.className = "cursor-glow";
@@ -26,18 +71,6 @@ document.addEventListener("pointermove", (event) => {
   glow.style.top = `${event.clientY}px`;
 });
 
-menuButton?.addEventListener("click", () => {
-  const open = nav.classList.toggle("open");
-  menuButton.setAttribute("aria-expanded", String(open));
-});
-
-nav?.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => {
-    nav.classList.remove("open");
-    menuButton?.setAttribute("aria-expanded", "false");
-  });
-});
-
 const problem = document.querySelector("#problem");
 const diagnosticLink = document.querySelector("#diagnostic-link");
 problem?.addEventListener("change", () => {
@@ -50,7 +83,7 @@ problem?.addEventListener("change", () => {
 });
 
 const animatedElements = document.querySelectorAll(
-  ".reveal, .product-card, .case, .value-grid article, .mini-process article, .stats-band > div"
+  ".reveal, .product-card, .case, .value-grid article, .mini-process article, .stats-band > div, .symptom-grid > a, .issue-grid article, .detail-steps article, .confidence-grid article"
 );
 
 animatedElements.forEach((element) => element.classList.add("reveal"));
@@ -91,4 +124,87 @@ document.querySelectorAll(".service-card, .product-card, .case, .service-feature
   card.addEventListener("pointerleave", () => {
     card.style.transform = "";
   });
+});
+
+
+// Home review slider: autoplay, controls, keyboard navigation and swipe.
+document.querySelectorAll("[data-review-slider]").forEach((slider) => {
+  const slides = [...slider.querySelectorAll("[data-review-slide]")];
+  const dots = [...slider.querySelectorAll("[data-review-dot]")];
+  const prev = slider.querySelector("[data-review-prev]");
+  const next = slider.querySelector("[data-review-next]");
+  if (slides.length < 2) return;
+
+  let current = 0;
+  let timer = null;
+  let pointerStartX = null;
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const show = (index) => {
+    current = (index + slides.length) % slides.length;
+    slides.forEach((slide, slideIndex) => {
+      const active = slideIndex === current;
+      slide.classList.toggle("is-active", active);
+      slide.setAttribute("aria-hidden", String(!active));
+    });
+    dots.forEach((dot, dotIndex) => {
+      const active = dotIndex === current;
+      dot.classList.toggle("is-active", active);
+      dot.setAttribute("aria-selected", String(active));
+    });
+  };
+
+  const stop = () => {
+    if (timer) window.clearInterval(timer);
+    timer = null;
+  };
+
+  const start = () => {
+    stop();
+    if (!reduceMotion) timer = window.setInterval(() => show(current + 1), 6500);
+  };
+
+  prev?.addEventListener("click", () => {
+    show(current - 1);
+    start();
+  });
+  next?.addEventListener("click", () => {
+    show(current + 1);
+    start();
+  });
+  dots.forEach((dot, index) => dot.addEventListener("click", () => {
+    show(index);
+    start();
+  }));
+
+  slider.addEventListener("mouseenter", stop);
+  slider.addEventListener("mouseleave", start);
+  slider.addEventListener("focusin", stop);
+  slider.addEventListener("focusout", start);
+  slider.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft") {
+      show(current - 1);
+      start();
+    }
+    if (event.key === "ArrowRight") {
+      show(current + 1);
+      start();
+    }
+  });
+
+  slider.addEventListener("pointerdown", (event) => {
+    if (event.pointerType === "mouse") return;
+    pointerStartX = event.clientX;
+  });
+  slider.addEventListener("pointerup", (event) => {
+    if (pointerStartX === null) return;
+    const delta = event.clientX - pointerStartX;
+    pointerStartX = null;
+    if (Math.abs(delta) < 45) return;
+    show(current + (delta < 0 ? 1 : -1));
+    start();
+  });
+
+  show(0);
+  start();
 });
