@@ -452,3 +452,6 @@ h1,
     letter-spacing:-.045em!important;
   }
 }
+
+.hero-location{display:flex;align-items:center;gap:10px;width:fit-content;margin-top:16px;color:#c4ccd8;font:600 12px Inter,Arial,sans-serif;text-decoration:none;transition:color .2s}.hero-location>span:first-child{display:grid;place-items:center;width:28px;height:28px;border:1px solid #2580ff66;border-radius:50%;color:#2ce2ff;font-size:19px}.hero-location b{color:#2ce2ff;font-size:14px}.hero-location:hover{color:#fff}
+@media(max-width:720px){.hero-location{font-size:11px}}
