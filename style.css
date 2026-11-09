@@ -452,3 +452,34 @@ h1,
     letter-spacing:-.045em!important;
   }
 }
+
+/* Ubicación */
+.hero-location{display:flex;align-items:center;gap:10px;width:fit-content;margin-top:16px;color:#c4ccd8;font:600 12px Inter,Arial,sans-serif;text-decoration:none;transition:color .2s}.hero-location>span:first-child{display:grid;place-items:center;width:28px;height:28px;border:1px solid #2580ff66;border-radius:50%;color:#2ce2ff;font-size:19px}.hero-location b{color:#2ce2ff;font-size:14px}.hero-location:hover{color:#fff}
+.location-map{background:#080016;padding:90px clamp(22px,6.5vw,105px);border-top:1px solid var(--line)}.map-head{display:flex;flex-direction:column;align-items:flex-start;margin-bottom:36px}.map-head h2{font:900 clamp(52px,5.6vw,84px)/.84 "Barlow Condensed",Arial,sans-serif;letter-spacing:-.045em;margin:26px 0 6px}.map-head h2 span{color:#2ce3ff}.map-frame{position:relative;height:460px;border:1px solid #35dfff40;border-radius:22px;overflow:hidden;box-shadow:0 25px 60px #0009}.map-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+@media(max-width:720px){.hero-location{font-size:11px}.location-map{padding:70px 20px}.map-head h2{font-size:50px}.map-frame{height:360px;border-radius:16px}}
+
+/* Banner portada GTA VI */
+.promo-banner{background:#080016;padding:clamp(12px,2vw,28px) clamp(10px,3vw,48px) 0}
+.promo-banner-link{display:block;max-width:min(1600px,calc((100vh - 150px) * 1.777));margin:0 auto;border-radius:22px;overflow:hidden;border:1px solid #c13bff55;box-shadow:0 0 0 1px #24d9ff1f,0 18px 60px #8b19e240;transition:transform .25s,box-shadow .25s}
+.promo-banner-link:hover{transform:translateY(-3px);box-shadow:0 0 0 1px #24d9ff55,0 22px 70px #c13bff59}
+.promo-banner img{width:100%;height:auto;aspect-ratio:1672/941;object-fit:contain}
+@media(max-width:720px){.promo-banner{padding:0}.promo-banner-link{max-width:none;border-radius:0;border:0;box-shadow:none}.promo-banner-link:hover{transform:none;box-shadow:none}.promo-banner img{aspect-ratio:941/1490}}
+
+/* WhatsApp flotante animado + llamada a la acción */
+.whatsapp-float{animation:waEnter .7s cubic-bezier(.2,1.4,.4,1) .4s both}
+.whatsapp-icon{position:relative;animation:whatsappPulse 2.4s infinite,waNudge 6s ease-in-out 3s infinite}
+.whatsapp-icon:before,.whatsapp-icon:after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #25d366;animation:waRing 2.4s ease-out infinite;pointer-events:none}
+.whatsapp-icon:after{animation-delay:1.2s}
+.whatsapp-badge{position:absolute;top:-3px;right:-3px;min-width:20px;height:20px;padding:0 5px;border-radius:10px;background:#ff2e7e;border:2px solid #0c0420;color:#fff;font:800 10px/16px Inter;text-align:center;box-shadow:0 0 12px #ff2e7e99;animation:waBadge .5s cubic-bezier(.2,1.6,.4,1) 2.6s both}
+.whatsapp-float.cta-seen .whatsapp-badge{display:none}
+.whatsapp-label{display:grid;gap:3px;background:#0c0420;letter-spacing:0;font:700 12px/1.3 Inter;padding:12px 16px;border-color:#25d36680;box-shadow:0 10px 30px #0009,0 0 22px #25d36633;position:relative;transform:translateX(14px) scale(.92);transform-origin:right center;transition:opacity .3s,transform .4s cubic-bezier(.2,1.4,.4,1)}
+.whatsapp-label b{font:800 13px/1.2 Inter;color:#fff}
+.whatsapp-label small{font:600 11px/1.3 Inter;color:#52f6b6}
+.whatsapp-label:after{content:"";position:absolute;right:-6px;top:50%;width:10px;height:10px;background:#0c0420;border-right:1px solid #25d36680;border-top:1px solid #25d36680;transform:translateY(-50%) rotate(45deg)}
+.whatsapp-float.cta-open .whatsapp-label,.whatsapp-float:hover .whatsapp-label{opacity:1;transform:none}
+@keyframes waEnter{from{opacity:0;transform:translateY(40px) scale(.6)}to{opacity:1;transform:none}}
+@keyframes waRing{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.7);opacity:0}}
+@keyframes waNudge{0%,84%,100%{transform:none}87%{transform:rotate(-14deg) scale(1.08)}90%{transform:rotate(12deg) scale(1.08)}93%{transform:rotate(-8deg)}96%{transform:rotate(5deg)}}
+@keyframes waBadge{from{transform:scale(0)}to{transform:scale(1)}}
+@media(max-width:720px){.whatsapp-label{display:grid;max-width:calc(100vw - 110px);white-space:normal;padding:10px 13px}.whatsapp-label b{font-size:12px}.whatsapp-label small{font-size:10.5px}}
+@media(prefers-reduced-motion:reduce){.whatsapp-float,.whatsapp-icon,.whatsapp-icon:before,.whatsapp-icon:after,.whatsapp-badge{animation:none!important}}
